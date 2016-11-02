@@ -11,6 +11,6 @@
 
 
 ## 11月2日更新日志
->1. DetailPage.js  该页面用来展示ListView中的每一个item，主要演示了RN中WebView的用法
+>1. ~/1031/DetailPage.js  该页面用来展示ListView中的每一个item，主要演示了RN中WebView的用法
 
->2. 在MainPage.js页面中捕获了Back按键的点击事件，让路由中的Component进行出栈。这里主要演示了如何捕获Back按键的点击事件，以及如何在Back按键的监听中处理Navigator中Component的出栈操作。
+>2. 在~/1031/MainPage.js页面中捕获了Back按键的点击事件，让路由中的Component进行出栈。这里主要演示了如何捕获Back按键的点击事件，以及如何在Back按键的监听中处理Navigator中Component的出栈操作。
