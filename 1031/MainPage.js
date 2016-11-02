@@ -11,6 +11,7 @@ import {
     Text,
     Image,
     Navigator,
+    BackAndroid,
     TouchableOpacity,
     View
 } from 'react-native';
@@ -81,6 +82,13 @@ export default class Test2 extends Component {
                 component:ListView
             });
         }
+    }
+
+    componentDidMount() {
+        const {navigator} = this.props;
+        BackAndroid.addEventListener('hardwareBackPress', function () {
+            return false;
+        });
     }
 
     render() {

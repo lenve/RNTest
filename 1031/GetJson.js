@@ -9,6 +9,7 @@ import {
     Text,
     Image,
     Navigator,
+    BackAndroid,
     TouchableOpacity,
     View
 } from 'react-native';
@@ -21,7 +22,15 @@ export default class Test2 extends Component {
         }
         this.getData();
     }
-
+    componentDidMount() {
+        const {navigator} = this.props;
+        BackAndroid.addEventListener('hardwareBackPress', function () {
+            if (navigator) {
+                navigator.pop();
+                return true;
+            }
+        });
+    }
     getData(){
         fetch("	http://www.tngou.net/api/cook/classify").then((response)=>response.text())
             .then((responseText)=> {

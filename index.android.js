@@ -10,23 +10,26 @@ import {
     StyleSheet,
     Text,
     Image,
+    BackAndroid,
     Navigator,
     View
 } from 'react-native';
-import NetImage from './1031/NetImage'
-import SayHello from './1031/SayHello'
-import ShowOrHide from './1031/ShowOrHide'
-import SimpleNavigationApp from './1031/SimpleNavigationApp'
-import MyScene from './1031/MyScene'
 import MainPage from './1031/MainPage'
 
 export default class RNTest extends Component {
+    // componentDidMount() {
+    //     const {navigator} = this.props;
+    //     BackAndroid.addEventListener('hardwareBackPress', function () {
+    //         return false;
+    //     });
+    // }
+
     render() {
         let defaultName = 'MainPage';
         let defaultComponent = MainPage;
         return (
             <Navigator
-                initialRoute={{name: defaultName, component: defaultComponent}}
+                initialRoute={{name: defaultName, component: defaultComponent, length: 1}}
                 configureScene={(route)=> {
                     return Navigator.SceneConfigs.VerticalDownSwipeJump;
                 }}

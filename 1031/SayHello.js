@@ -10,6 +10,7 @@ import {
     StyleSheet,
     Text,
     Image,
+    BackAndroid,
     TouchableOpacity,
     View
 } from 'react-native';
@@ -21,7 +22,15 @@ export default class SayHello extends Component {
             navigator.pop();
         }
     }
-
+    componentDidMount() {
+        const {navigator} = this.props;
+        BackAndroid.addEventListener('hardwareBackPress', function () {
+            if (navigator) {
+                navigator.pop();
+                return true;
+            }
+        });
+    }
     render() {
         return (
             <View>
