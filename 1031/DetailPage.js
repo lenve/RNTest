@@ -13,7 +13,7 @@ export default class DetailPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ''
+            data: ``
         }
         this.getInternetData(this.props.id);
     }
@@ -23,17 +23,21 @@ export default class DetailPage extends Component {
             .then((response)=>response.json())
             .then((responseText)=> {
                 this.setState({
-                    data: responseText
+                    data: responseText.message
                 });
             }).done();
     }
 
     render() {
         return (
-            <View>
-                <WebView source={'<!DOCTYPE html><head></head><body>'+this.state.data.message+'</body></html>'}></WebView>
-                {/*<WebView javaScriptEnabled={true} injectedJavaScript={this.state.data.message}></WebView>*/}
+            <View style={styles.container}>
+                <WebView source={{html:this.state.data}}></WebView>
             </View>
         );
     }
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    }
+});
