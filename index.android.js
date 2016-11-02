@@ -17,12 +17,6 @@ import {
 import MainPage from './1031/MainPage'
 
 export default class RNTest extends Component {
-    // componentDidMount() {
-    //     const {navigator} = this.props;
-    //     BackAndroid.addEventListener('hardwareBackPress', function () {
-    //         return false;
-    //     });
-    // }
 
     render() {
         let defaultName = 'MainPage';

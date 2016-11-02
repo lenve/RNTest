@@ -7,7 +7,6 @@ import {
     Text,
     Image,
     View,
-    BackAndroid,
     WebView
 } from 'react-native';
 export default class DetailPage extends Component {
@@ -17,16 +16,6 @@ export default class DetailPage extends Component {
             data: ``
         }
         this.getInternetData(this.props.id);
-    }
-
-    componentDidMount() {
-        const {navigator} = this.props;
-        BackAndroid.addEventListener('hardwareBackPress', function () {
-            if (navigator) {
-                navigator.pop();
-                return true;
-            }
-        });
     }
 
     getInternetData(id) {

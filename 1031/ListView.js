@@ -11,7 +11,6 @@ import {
     ListView,
     TouchableOpacity,
     ToastAndroid,
-    BackAndroid,
     View
 } from 'react-native';
 import ListViewItem from './ListViewItem'
@@ -24,15 +23,6 @@ export default class Test2 extends Component {
             data: ds.cloneWithRows([''])
         };
         this.getInternetData();
-    }
-    componentDidMount() {
-        const {navigator} = this.props;
-        BackAndroid.addEventListener('hardwareBackPress', function () {
-            if (navigator) {
-                navigator.pop();
-                return true;
-            }
-        });
     }
     getInternetData(){
         fetch("http://www.tngou.net/api/cook/list")

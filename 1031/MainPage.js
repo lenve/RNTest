@@ -13,6 +13,7 @@ import {
     Navigator,
     BackAndroid,
     TouchableOpacity,
+    ToastAndroid,
     View
 } from 'react-native';
 import NetImage from './NetImage'
@@ -37,7 +38,15 @@ export default class Test2 extends Component {
             });
         }
     }
-
+    componentDidMount() {
+        const {navigator} = this.props;
+        BackAndroid.addEventListener('hardwareBackPress', function () {
+            if (navigator) {
+                navigator.pop();
+                return true;
+            }
+        });
+    }
     aboutProps(name) {
         const {navigator} = this.props;
         if (navigator) {
@@ -82,13 +91,6 @@ export default class Test2 extends Component {
                 component:ListView
             });
         }
-    }
-
-    componentDidMount() {
-        const {navigator} = this.props;
-        BackAndroid.addEventListener('hardwareBackPress', function () {
-            return false;
-        });
     }
 
     render() {

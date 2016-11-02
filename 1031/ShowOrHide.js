@@ -8,7 +8,6 @@ import {
     Text,
     Image,
     TouchableOpacity,
-    BackAndroid,
     View
 } from 'react-native';
 
@@ -22,15 +21,6 @@ export default class ShowOrHide extends Component {
             // 修改方式
             this.setState({showText: !this.state.showText})
         }, 1000);
-    }
-    componentDidMount() {
-        const {navigator} = this.props;
-        BackAndroid.addEventListener('hardwareBackPress', function () {
-            if (navigator) {
-                navigator.pop();
-                return true;
-            }
-        });
     }
     goBack(){
         const {navigator} = this.props;

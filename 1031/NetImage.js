@@ -8,7 +8,6 @@ import {
     Text,
     TouchableOpacity,
     Image,
-    BackAndroid,
     View
 } from 'react-native';
 //加载一张网络图片
@@ -19,15 +18,7 @@ export default class NetImage extends Component {
             navigator.pop();
         }
     }
-    componentDidMount() {
-        const {navigator} = this.props;
-        BackAndroid.addEventListener('hardwareBackPress', function () {
-            if (navigator) {
-                navigator.pop();
-                return true;
-            }
-        });
-    }
+
     render() {
         let pic = {uri: 'http://img3.cache.netease.com/photo/0009/2016-09-29/C241FMT00AI20009.png'};
         return (
