@@ -38,15 +38,21 @@ export default class Test2 extends Component {
             });
         }
     }
+
     componentDidMount() {
         const {navigator} = this.props;
         BackAndroid.addEventListener('hardwareBackPress', function () {
             if (navigator) {
-                navigator.pop();
-                return true;
+                if (navigator.getCurrentRoutes().length > 1) {
+                    navigator.pop();
+                    return true;
+                } else {
+                    return false;
+                }
             }
         });
     }
+
     aboutProps(name) {
         const {navigator} = this.props;
         if (navigator) {
@@ -77,18 +83,18 @@ export default class Test2 extends Component {
         const navigator = this.props.navigator;
         if (navigator) {
             navigator.push({
-                name:"GetJson",
-                component:GetJson
+                name: "GetJson",
+                component: GetJson
             });
         }
     }
 
-    getListView(){
+    getListView() {
         const {navigator} = this.props;
-        if(navigator) {
+        if (navigator) {
             navigator.push({
-                name:"ListView",
-                component:ListView
+                name: "ListView",
+                component: ListView
             });
         }
     }
