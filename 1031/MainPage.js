@@ -23,6 +23,8 @@ import SimpleNavigationApp from './SimpleNavigationApp'
 import MyScene from './MyScene'
 import GetJson from './GetJson'
 import ListView from './ListView'
+import AdsViewPager from '../1103/AdsViewPager'
+import FlexBox from '../1103/FlexBox'
 
 export default class Test2 extends Component {
     constructor(props) {
@@ -99,6 +101,25 @@ export default class Test2 extends Component {
         }
     }
 
+    goAdsViewPager() {
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.push({
+                name: 'adsViewPager',
+                component: AdsViewPager
+            });
+        }
+    }
+    goFlexBox(){
+        const {navigator} = this.props;
+        if(navigator) {
+            navigator.push({
+                name:'FlexBox',
+                component:FlexBox
+            });
+        }
+    }
+
     render() {
         return (
             <View>
@@ -121,6 +142,13 @@ export default class Test2 extends Component {
                 <TouchableOpacity onPress={this.getListView.bind(this)}>
                     <Text>ListView加载数据</Text>
                 </TouchableOpacity>
+                <TouchableOpacity onPress={this.goFlexBox.bind(this)}>
+                    <Text>FlexBox练习曲</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={this.goAdsViewPager.bind(this)}>
+                    <Text>广告条ViewPager</Text>
+                </TouchableOpacity>
+
             </View>
         );
     }
