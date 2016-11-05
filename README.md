@@ -17,3 +17,7 @@
 ## 11月3日更新日志
 >1. ~/1103/AdsViewPager.js 该页面展示了一个广告条ViewPager
 >2. ~/1103/FlexBox.js 该页面展示了FlexBox的基本用法以及Image的常见属性
+
+## 11月5日更新日志
+>1. ~/1104/Ctrip.js 该页面模仿了携程旅行，主要展示了FlexBox的基本用法，效果图如下![image 081](https://cloud.githubusercontent.com/assets/6023444/20030705/562d659a-a3a5-11e6-8088-5c1676afaa2d.png)
+

@@ -25,6 +25,7 @@ import GetJson from './GetJson'
 import ListView from './ListView'
 import AdsViewPager from '../1103/AdsViewPager'
 import FlexBox from '../1103/FlexBox'
+import Ctrip from '../1104/Ctrip'
 
 export default class Test2 extends Component {
     constructor(props) {
@@ -120,6 +121,16 @@ export default class Test2 extends Component {
         }
     }
 
+    goCtrip(){
+        const {navigator} = this.props;
+        if(navigator) {
+            navigator.push({
+                name:'Ctrip',
+                component:Ctrip
+            });
+        }
+    }
+
     render() {
         return (
             <View>
@@ -148,7 +159,9 @@ export default class Test2 extends Component {
                 <TouchableOpacity onPress={this.goAdsViewPager.bind(this)}>
                     <Text>广告条ViewPager</Text>
                 </TouchableOpacity>
-
+                <TouchableOpacity onPress={this.goCtrip.bind(this)}>
+                    <Text>携程旅行</Text>
+                </TouchableOpacity>
             </View>
         );
     }
